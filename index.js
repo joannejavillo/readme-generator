@@ -4,7 +4,7 @@ const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 
-const fileName = `myReadMe.md`;
+const fileName = `README_GENERATED.md`;
 
 // TODO: Create a function to write README file
 //function writeToFile(fileName, data) {}
