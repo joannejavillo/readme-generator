@@ -1,82 +1,93 @@
+// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 
-const generateHTML = (answers) =>
-  `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <title>Document</title>
-</head>
-<body>
-  <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Hi! My name is ${answers.name}</h1>
-    <p class="lead">I am from ${answers.location}.</p>
-    <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
-    <ul class="list-group">
-      <li class="list-group-item">My GitHub username is ${answers.github}</li>
-      <li class="list-group-item">LinkedIn: ${answers.linkedin}</li>
-    </ul>
-  </div>
-</div>
-</body>
-</html>`;
 
-inquirer
-  .prompt([
+const fileName = `myReadMe.md`;
+
+// TODO: Create a function to write README file
+//function writeToFile(fileName, data) {}
+
+// TODO: Create an array of questions for user input
+
+const questions = [
+  {
+    type: 'input',
+    name: 'name',
+    message: 'Enter your name',
+  },
     {
       type: 'input',
-      name: 'Title of my project',
+      name: 'titleProject',
       message: 'What is the title of my project?',
     },
     {
       type: 'input',
-      name: 'Description',
-      message: 'Description of this readMe',
+      name: 'description',
+      message: 'Description of this project',
     },
     {
       type: 'input',
-      name: 'Table of Contents',
+      name: 'tableOfContents',
       message: 'Table of Contents',
     },
     {
       type: 'input',
-      name: 'Installation',
+      name: 'installation',
       message: 'Installation of this project',
     },
     {
       type: 'input',
-      name: 'Usage',
+      name: 'usage',
       message: 'Usage',
     },
     {
-      type: 'input',
-      name: 'License',
+      type: 'list',
+      name: 'license',
       message: 'License',
+      choices: ['MIT', 'Apache', 'BSD 3']
     },
     {
       type: 'input',
-      name: 'Contributing',
+      name: 'contributing',
       message: 'Contributing',
     },
     {
       type: 'input',
-      name: 'Tests',
+      name: 'tests',
       message: 'Tests',
     },
     {
       type: 'input',
-      name: 'Questions',
+      name: 'questions',
       message: 'Questions',
     },
-  ])
-  .then((answers) => {
-    const htmlPageContent = generateHTML(answers);
+  ]
 
-    fs.writeFile('index.html', htmlPageContent, (err) =>
-      err ? console.log(err) : console.log('Successfully created index.html!')
-    );
-  });
+ // .then((answers) => {
+   // const generateMarkdown = generateMarkdown(answers);
+
+  //});
+
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {
+
+  fs.writeFile(fileName, data, null, (err) =>
+    err ? console.error(err) : console.log('Success!')
+  );
+}
+
+// TODO: Create a function to initialize app
+function init() {
+  inquirer
+    .prompt(questions)
+    .then((data) =>
+      writeToFile(fileName, generateMarkdown(data)))
+    .then(() => console.log('Succesfully created readMe'))
+    .catch((err) => console.error(err));
+
+}
+
+// Function call to initialize app
+init();
