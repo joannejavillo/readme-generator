@@ -16,6 +16,12 @@ This project is created using a command line node
 node js, npm
 # Usage 
 node js
+---
+# Video
+![Deployed-Gen](./src/MyReadMeGenerator.gif)
+
+You can see the [full-video-here](./src/ReadMe.mp4).
+---
 # License
 MIT
 # Contributing
