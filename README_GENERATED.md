@@ -1,10 +1,10 @@
 
-# my Read me
+# My readMe Generator
 ![License](https://img.shields.io/badge/License-MIT-purple)
 # Description 
-
+This project is done using a command line
 # Table of Contents 
-n
+
   ## [Description](#description)
   ## [Installation](#installation)
   ## [Usage](#usage)
@@ -13,15 +13,15 @@ n
   ## [Test](#tests)
   ## [Questions](#questions)
 # Installation
-n
+node js, npm
 # Usage 
-n
+node index.js
 # License
 MIT
 # Contributing
-n
+none
 # Test
-n
+none
 # Questions
-n
+
 If you have any questions you can contact me at jo_anne.javillo@outlook.com or you can visit my gitHub page: (https://github.com/joannejavillo)
