@@ -2,7 +2,7 @@
 # My readMe Generator
 ![License](https://img.shields.io/badge/License-MIT-purple)
 # Description 
-this project was done using a command line
+This project is created using a command line node
 # Table of Contents 
 
   ## [Description](#description)
@@ -13,7 +13,7 @@ this project was done using a command line
   ## [Test](#tests)
   ## [Questions](#questions)
 # Installation
-npm, node js
+node js, npm
 # Usage 
 node js
 # License
